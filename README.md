@@ -1,0 +1,1 @@
+This is a simple program using OPenCV for video input and image manipulation while using hand tracking via MediaPipe. The patterns of fingers being raised and lowered are perceived and a number corresponding to that is produced.
