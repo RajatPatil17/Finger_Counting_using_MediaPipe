@@ -12,8 +12,7 @@ with mp_hands.Hands(
   while cap.isOpened():
     ret, frame = cap.read()
     if not ret:
-      print("Ignoring empty camera frame.")
-      continue
+        continue
 
     frame.flags.writeable = False
     frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
