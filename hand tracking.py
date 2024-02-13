@@ -9,7 +9,7 @@ with mp_hands.Hands(
     model_complexity=0,
     min_detection_confidence=0.5,
     min_tracking_confidence=0.5) as hands:
-  while cap.isOpened():
+  while True:
     ret, frame = cap.read()
     if not ret:
         continue
@@ -60,6 +60,8 @@ with mp_hands.Hands(
     cv2.putText(frame, str(counter), (50, 450), cv2.FONT_HERSHEY_SIMPLEX, 3, (255, 0, 0), 10)
 
     cv2.imshow('Main Window', frame)
-    if cv2.waitKey(5) & 0xFF == 27:
+    key = cv2.waitKey(1)
+    if key ==ord("q"):
       break
 cap.release()
+cv2.destroyAllWindows()
